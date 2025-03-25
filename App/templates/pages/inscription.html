@@ -1,0 +1,62 @@
+{% extends "../base.html" %}
+
+{% block title %}Inscription{% endblock title %}
+
+{% block container %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow border-0 rounded-4" style="background: #f9fdf9;">
+                <div class="card-body px-4 py-5">
+                    <h2 class="text-center text-success mb-4">Créer un compte 🍍</h2>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success text-center" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %} 
+
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        <div class="form-group mb-3">
+                            {{ form.username.label_tag }} 
+                            {{ form.username }}
+                        </div>
+                        <div class="form-group mb-3">
+                            {{ form.email.label_tag }} 
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group mb-3">
+                            {{ form.password1.label_tag }} 
+                            {{ form.password1 }}
+                        </div>
+                        <div class="form-group mb-3">
+                            {{ form.password2.label_tag }} 
+                            {{ form.password2 }}
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 rounded-pill mt-3">
+                            S’inscrire
+                        </button>
+                    </form>
+
+                    <ul class="nav justify-content-center mt-4">
+
+                        <p class="text-center mt-4">
+                            <span class="text-muted">Déja inscrit ?</span>
+                            <a href="{% url 'connexion' %}" class="btn btn-outline-primary btn-sm ms-2">
+                                Connectez-vous
+                            </a>
+                        </p>
+                        
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock container %}

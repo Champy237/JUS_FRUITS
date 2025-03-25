@@ -1,0 +1,63 @@
+{% extends "../base.html" %}
+
+{% block title %}Connexion{% endblock title %}
+
+{% block container %}
+
+<Style>
+    .inscription-card {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        padding: 40px;
+        transition: all 0.3s ease-in-out;
+    }
+    .inscription-card:hover {
+        transform: translateY(-5px);
+    }
+    .inscription-card h2 {
+        color: #0077b6;
+        font-weight: 700;
+    }
+    .form-control {
+        border-radius: 10px;
+    }
+    .btn-inscrire {
+        background-color: #0077b6;
+        color: #fff;
+        border-radius: 10px;
+    }
+    .btn-inscrire:hover {
+        background-color: #023e8a;
+    }
+</style>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="col-md-6">
+        <div class="card shadow-lg rounded-4 border-0">
+            <div class="card-body p-5">
+                <h2 class="text-center text-success mb-4">Connexion 🍹</h2>
+
+                {% if form.errors %}
+                <div class="alert alert-danger text-center" role="alert">
+                    Nom d’utilisateur ou mot de passe incorrect.
+                </div>
+                {% endif %}
+
+                <form method="POST" novalidate>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <button type="submit" class="btn btn-success w-100 mt-3">Se connecter</button>
+                </form>
+                <p class="text-center mt-4">
+                    <span class="text-muted">Pas encore inscrit ?</span>
+                    <a href="{% url 'inscription' %}" class="btn btn-outline-primary btn-sm ms-2">
+                        Inscrivez-vous
+                    </a>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock container %}

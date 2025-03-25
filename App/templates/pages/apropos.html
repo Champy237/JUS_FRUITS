@@ -1,0 +1,35 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %}À propos de nous{% endblock title %}
+
+{% block container %}
+<div class="apropos">
+    <div class="container py-5">
+        <h1 class="text-center text-success mb-4">À PROPOS DE NOUS 🧃</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'images/ananas.png' %}" alt="Notre équipe" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <p class="lead text-justify">
+                    Chez <strong>FreshJuice</strong>, nous croyons que la nature offre le meilleur. 
+                    Depuis notre création, nous nous sommes engagés à offrir des jus 100% naturels, 
+                    sans conservateurs ni sucres ajoutés. Nos fruits sont soigneusement sélectionnés 
+                    auprès de producteurs locaux pour garantir fraîcheur, qualité et saveur.
+                </p>
+                <p>
+                    Notre mission est simple : <strong>vous faire plaisir tout en prenant soin de votre santé</strong>. 
+                    Que vous soyez amateur de goûts exotiques, passionné de nutrition ou simplement à la recherche 
+                    d'une boisson rafraîchissante, vous trouverez chez nous votre bonheur.
+                </p>
+                <p>
+                    Nous proposons également des jus adaptés aux personnes diabétiques, 
+                    afin que chacun puisse profiter du bon goût des fruits, sans compromis.
+                </p>
+                <a href="{% url 'home' %}" class="btn btn-outline-success mt-3">Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock container %}

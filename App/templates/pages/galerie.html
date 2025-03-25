@@ -1,0 +1,69 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %}Contact & Commande{% endblock title %}
+
+{% block container %}
+<div class="contact-page">
+    <div class="container">
+        <h1 class="text-center text-success my-4">Contact & Commande 🍹</h1>
+
+        <div class="row">
+            <!-- Formulaire de commande champy -->
+            <div class="col-md-6">
+                <div class="card contact-card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Passez une commande</h4>
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nom :</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="emaile" class="form-label">Mail :</label>
+                                <input type="Email" class="form-control" id="name" name="name" required>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Téléphone :</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="fruit" class="form-label">Sélectionnez un jus :</label>
+                                <select class="form-control" id="fruit" name="fruit">
+                                    {% for fruit in fruits %}
+                                    <option value="{{ fruit.name }}">{{ fruit.name }} - {{ fruit.price }} XAF</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100">Commander</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact via WhatsApp champy -->
+            <div class="col-md-6">
+                <div class="card contact-card" style = "    border-radius: 10px;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);background: #fff;padding: 20px;margin-bottom: 20px;">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Contactez-nous</h4>
+                        <p><strong>Téléphone :</strong> <a href="tel:+237683941228">+237 683 941 228</a></p>
+                        <p><strong>Email :</strong> cedricallanndjong@gmail.com</p>
+                        <p><strong>Adresse :</strong> Camp-sonel, Yaoundé</p>
+
+                        <a href="https://wa.me/+237683941228?text=Bonjour,%20je%20souhaite%20passer%20une%20commande"
+                           class="btn btn-success btn-lg">
+                            <i class="bi bi-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock container %}

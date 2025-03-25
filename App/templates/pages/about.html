@@ -1,0 +1,38 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %}À Propos{% endblock title %}
+
+{% block container %}
+<div class="about">
+    <div class="container text-center mt-4">
+        <h1 class="text-success">Bienvenue sur notre sélection de Jus de Fruits 🍹</h1>
+    
+        <div class="row justify-content-center mt-4">
+            {% for fruit in fruits %}
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="{{ fruit.image.url }}" class="card-img-top product-img" alt="{{ fruit.name }}">
+                    <div class="card-body">
+                        <h4 class="card-title text-success">{{ fruit.name }}</h4>
+                        <p class="card-text"><strong>Prix :</strong> {{ fruit.price }} FCFA</p>
+                        <p class="card-text"><strong>Ingrédients :</strong> {{ fruit.ingredient }}</p>
+                        
+                        {% if fruit.diabetic %}
+                            <span class="badge bg-warning text-dark">Diabétique</span>
+                            <br>
+                        {% else %}
+                            <span class="badge bg-success">Non Diabétique</span>
+                        {% endif %}
+
+                        <div class="btn-group mt-3">
+                            <a href="{% url 'home' %}" class="btn btn-outline-secondary">Retour</a>
+                            <a href="https://wa.me/+237683941228?text=Bonjour, j'aimerais commander {{ fruit.name }}" class="btn btn-outline-success mx-2">Commander</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock container %}
