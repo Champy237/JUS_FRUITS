@@ -5,27 +5,51 @@
 {% block container %}
 
 <div class="detail">
-<div class="container detail-container text-center" style="background-color:#4CAF50 ;padding: 50px;">
-    <h2 class="text-white my-4">DÉTAIL DU JUS DE FRUITS 🍹</h2>
+    <div class="container-lg detail-container text-center mx-auto" 
+        style="
+            background-image: url('URL_DE_TON_IMAGE'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            padding: 50px; 
+            max-width: 80%; 
+            border-radius: 20px;
+            position: relative; 
+            color: white;
+        ">
+        
+        <!-- Overlay pour rendre le texte lisible -->
+        <div style="background: rgba(0, 0, 0, 0.5); padding: 50px; border-radius: 20px;">
+            <h2 class="text-white my-4">DÉTAIL DU JUS DE FRUITS 🍹</h2>
 
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card fruit-detail-card" style="border-radius: 10px; border: none; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);transition: transform 0.3s ease-in-out;background: #fff;">
-                <img src="{{ fruit.image.url }}" alt="Image de {{ fruit.name }}" class="card-img-top fruit-img" style="    width: 100%;height: auto;border-top-left-radius: 10px;border-top-right-radius: 10px;">
-                <div class="card-body" style="padding: 20px;text-align: center;">
-                    <h3 class="card-title text-success">{{ fruit.name }}</h3>
-                    <p class="card-text"><strong>Ingrédients:</strong> {{ fruit.ingredient }}</p>
-                    <p class="card-text"><strong>DATE DE PRODUCTION:</strong>{{fruit.date }}</p>
+            <div class="row justify-content-center align-items-center">
+                <!-- Image du fruit -->
+                <div class="col-md-5 text-center">
+                    <img src="{{ fruit.image.url }}" alt="Image de {{ fruit.name }}" 
+                        class="img-fluid rounded shadow-lg" 
+                        style="max-width: 100%; height: auto; border-radius: 15px;">
+                </div>
 
-                    <div class="btn-group mt-3">
-                        <a href="{% url 'home' %}" class="btn btn-outline-secondary">Retour</a>
-                        <a href="https://wa.me/+237683941228?text=Bonjour, j'aimerais commander {{ fruit.name }}" class="btn btn-outline-success mx-2">Commander</a>
+                <!-- Informations du fruit -->
+                <div class="col-md-6">
+                    <div class="card fruit-detail-card p-4" 
+                        style="border-radius: 15px; border: none; box-shadow: 0px 6px 12px rgba(0,0,0,0.15); background: #fff; padding: 30px; color: black;">
+                        <h3 class="text-success">{{ fruit.name }}</h3>
+                        <p><strong>Ingrédients :</strong> {{ fruit.ingredient }}</p>
+                        <p><strong>Date de production :</strong> {{ fruit.date }}</p>
+
+                        <!-- Boutons -->
+                        <div class="d-flex justify-content-center mt-4">
+                            <a href="{% url 'home' %}" class="btn btn-outline-secondary mx-3 px-4">Retour</a>
+                            <a href="https://wa.me/+237683941228?text=Bonjour, j'aimerais commander {{ fruit.name }}" 
+                               class="btn btn-success mx-3 px-4">Commander</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 
 {% endblock container %}
