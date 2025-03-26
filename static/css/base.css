@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap');
 
+
+body{
+    background: url('../images/background.webp') no-repeat center center fixed; 
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.transparent-navbar {
+    background-color: rgba(255, 255, 255, 0.623); /* Couleur de fond transparente */
+    backdrop-filter: blur(10px); /* Flou en arrière-plan */
+}
+
+.transparent-navbar .navbar-nav .nav-link {
+    color: #000; /* Assure que le texte est lisible, ajuste la couleur comme tu veux */
+}
+
+.transparent-navbar .navbar-brand {
+    color: #28a745; /* Garde la couleur du logo en vert */
+}
+
+.transparent-navbar .btn-outline-success, .transparent-navbar .btn-outline-danger {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.transparent-navbar .btn-outline-success:hover, .transparent-navbar .btn-outline-danger:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+
+nav{
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
 .navbar .container .navbar-brand {
     font-size: 1.8rem;
     font-weight: bold;
@@ -37,7 +77,6 @@
 
 
 .accueil {
-    background-color: #4CAF50;
     padding: 70px 0;
 }
 
@@ -61,7 +100,6 @@
 
 /* Style de la section Accueil */
 .accueil {
-    background-color: #4CAF50;
     padding: 50px 0;
 }
 
