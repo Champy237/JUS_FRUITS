@@ -2,7 +2,7 @@
 
 
 body{
-    background: url('../images/background.webp') no-repeat center center fixed; 
+    background: url('../images/background2.webp') no-repeat center center fixed; 
     background-size: cover;
     min-height: 100vh;
     margin: 0;
@@ -11,8 +11,9 @@ body{
 
 
 .transparent-navbar {
-    background-color: rgba(255, 255, 255, 0.623); /* Couleur de fond transparente */
-    backdrop-filter: blur(10px); /* Flou en arrière-plan */
+    background-color: rgba(255, 255, 255, 0.342); /* Couleur de fond transparente */
+    backdrop-filter: blur(10px);
+
 }
 
 .transparent-navbar .navbar-nav .nav-link {
@@ -33,11 +34,15 @@ body{
     color: #fff;
 }
 
+footer{
+    background-color: #000;
+}
 
 nav{
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
+    box-shadow: #000 ;
 }
 
 .navbar .container .navbar-brand {
@@ -78,6 +83,35 @@ nav{
 
 .accueil {
     padding: 70px 0;
+
+}
+.accueil h1 {
+    color: #1da851;
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #1da851;
+    width: 0;
+    animation: typing 5s steps(30) infinite alternate-reverse;
+    max-width: 100%;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.accueil .flou-container {
+    background-color: rgba(255, 255, 255, 0.3); /* Fond translucide */
+    backdrop-filter: blur(10px); /* Effet de flou */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Style des cartes */
@@ -94,7 +128,7 @@ nav{
 
 .accueil .fruit-card .card-body {
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
 }
 
@@ -117,7 +151,7 @@ nav{
 
 .fruit-card .card-body {
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffffbb;
     border-radius: 10px;
 }
 

@@ -4,23 +4,36 @@
 
 {% block container %}
 <div class="accueil">
-    <div class="container text-center p-4" >
+    <style>
+
+    
+        .fruit-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5); /* Voile sombre pour meilleure lisibilité */
+        }
+    
+        .card-body {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    <div class="container text-center p-4"  style="background-color: rgba(255, 255, 255, 0.644);">
         
-        <h1 class="text-white my-4">DÉCOUVREZ NOS DÉLICIEUX JUS DE FRUITS 🍹</h1>
-        <p class="text-white">Des jus 100% naturels et frais, faits avec amour ❤️</p>
+        <h1 class="typing-text my-4">DÉCOUVREZ NOS DÉLICIEUX JUS DE FRUITS 🍹</h1>
+        <p class="" style="color: green;">Des jus 100% naturels et frais, faits avec amour ❤️</p>
 
         <div class="row justify-content-center">
             {% for fruit in fruits %}
             <div class="col-md-4 col-sm-6 mb-4">
                 <div class="card fruit-card shadow-lg">
-                    <div class="card-body">
+                    <div class="card-body" style="background-image: url('{{ fruit.image.url }}');">
                         <h3 class="card-title text-success">{{ fruit.name }}</h3>
                         <p class="card-text"><strong>PRIX :</strong> {{ fruit.price }} FCFA</p>
-
-                        {% if fruit.diabetic %}
-                            <span class="badge bg-warning text-dark">Convient aux diabétiques</span>
-                        {% endif %}
-
                         <a href="/detail/{{ fruit.id }}" class="btn btn-outline-success mt-3">Voir les détails</a>
                     </div>
                 </div>
