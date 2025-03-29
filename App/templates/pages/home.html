@@ -31,8 +31,8 @@
             {% for fruit in fruits %}
             <div class="col-md-4 col-sm-6 mb-4">
                 <div class="card fruit-card shadow-lg">
-                    <div class="card-body" style="background-image: url('{{ fruit.image.url }}');">
-                        <h3 class="card-title text-success">{{ fruit.name }}</h3>
+                    <div class="card-body" style="background-image: url('{{ fruit.image.url }}');background-size: cover;">
+                        <h3 class="card-title text-success" style="text-shadow: 3px 3px 2px rgba(0, 68, 6, 0.7)">{{ fruit.name }}</h3>
                         <p class="card-text"><strong>PRIX :</strong> {{ fruit.price }} FCFA</p>
                         <a href="/detail/{{ fruit.id }}" class="btn btn-outline-success mt-3">Voir les détails</a>
                     </div>
